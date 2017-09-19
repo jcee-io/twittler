@@ -64,7 +64,7 @@ function getVal(obj){
             + '"><strong><button value="'+ tweet.user + '"onclick="getVal(this)">'
             + realNames[tweet.user] 
             +'</button></strong> @' + tweet.user 
-            +'<img class="verified" src="verified.png">'+ ' - ' 
+            +'<img class="verified" src="verified.png" hidden>'+ ' - ' 
             + date
             + '</div>' 
             + tweet.message + '<br><br>'
@@ -76,9 +76,10 @@ function getVal(obj){
           $tweet.appendTo($body);
           userTweets[tweet.user].push($tweet);
           tweetHistory.push($tweet);
+          $('.realDonaldTrump').find('.verified').removeAttr('hidden');
           index -= 1;
         }
 
       });
 
-console.log(userTweets)
+
