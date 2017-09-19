@@ -27,12 +27,30 @@ function goHome(){
 
 function getVal(obj){
   $('.tweet').remove();
-  
+
   for(var i = 0; i < userTweets[obj.value].length; i++){
     userTweets[obj.value][i].appendTo($('body'));
   }
 }
 //////////////////////////////// Data Generator /////////////////////////////////
+/*
+      <div class="tweet jumbotron container">
+        <div class="username tweet.user">
+          <strong>
+            <button value="tweet.user" onclick="getVal(this)">USER NAME</button>
+          </strong>
+          @username
+          <img class="verified" src="verified.png">
+          TIMESTAMP
+        </div>
+        tweet.message <br><br>
+        <span class="icon-bubbles"></span>
+        <span class="icon-loop"></span>
+        <span class="icon-heart"></span>
+        <span class="icon-envelope-letter"></span>
+      </div>
+*/
+
       $(document).ready(function(){
         var $body = $('body');
         //$body.html('');
@@ -43,7 +61,7 @@ function getVal(obj){
           var $tweet = $('<div class="tweet jumbotron container"></div>');
           $tweet.html(
             '<div class="username ' + tweet.user 
-            + '"><strong><button value="'+ tweet.user + '"onclick="getVal(this)" class="userlink" style="color: black;">'
+            + '"><strong><button value="'+ tweet.user + '"onclick="getVal(this)">'
             + realNames[tweet.user] 
             +'</button></strong> @' + tweet.user 
             +'<img class="verified" src="verified.png">'+ ' - ' 

@@ -2,9 +2,10 @@ body {
 	background : #e6ecf0;
 }
 
-table {
-    margin-left:auto; 
-    margin-right:auto;
+strong > button {
+	background: transparent;
+	border: none;
+	color: black;
 }
 
 #logo {
@@ -13,15 +14,7 @@ table {
 	width: 200px;
 }
 
-.userlink {
-	background: transparent;
-	border: none;
-}
-.jumbotron #leftside {
 
-
-	width: 10%;
-}
 
 .tweet {
 	font-family: "Helvetica Neue";
