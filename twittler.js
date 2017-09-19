@@ -5,26 +5,33 @@ date = date.toLocaleTimeString()
 var realNames = {
   'douglascalhoun' : 'Douglas Calhoun',
   'mracus'         : 'Max R Acus',
-  'shawndrost'     : 'Mister Shawn',
+  'realDonaldTrump'     : 'Donald Trump',
   'sharksforcheap' : 'ZOOKEEPER WILLIS'
 };
 var userTweets = {
   'douglascalhoun' : [],
   'mracus'         : [],
-  'shawndrost': [],
+  'realDonaldTrump': [],
   'sharksforcheap' : []
 }
 
-var orderedTweets = '';
-function userTimeline(){
+var tweetHistory = [];
 
+
+function goHome(){
+  $('.tweet').remove();
+  for(var i = 0; i < tweetHistory.length; i++){
+    tweetHistory[i].appendTo($('body'));
+  }
 }
 
-function ifClick(){
-  alert('hello world');
+function getVal(obj){
+  $('.tweet').remove();
+  
+  for(var i = 0; i < userTweets[obj.value].length; i++){
+    userTweets[obj.value][i].appendTo($('body'));
+  }
 }
-
-
 //////////////////////////////// Data Generator /////////////////////////////////
       $(document).ready(function(){
         var $body = $('body');
@@ -36,15 +43,21 @@ function ifClick(){
           var $tweet = $('<div class="tweet jumbotron container"></div>');
           $tweet.html(
             '<div class="username ' + tweet.user 
-            + '"><strong><a href="#" onclick="ifClick()" style="color: black;">'
+            + '"><strong><button value="'+ tweet.user + '"onclick="getVal(this)" class="userlink" style="color: black;">'
             + realNames[tweet.user] 
-            +'</a></strong> @' + tweet.user 
+            +'</button></strong> @' + tweet.user 
             +'<img class="verified" src="verified.png">'+ ' - ' 
             + date
             + '</div>' 
-            + tweet.message);
+            + tweet.message + '<br><br>'
+            + '<span class="icon-bubbles"> comments </span>'
+            + '<span class="icon-loop"> retweets </span>'
+            + '<span class="icon-heart"> likes </span>'
+            + '<span class="icon-envelope-letter"> message </span>'
+            );
           $tweet.appendTo($body);
           userTweets[tweet.user].push($tweet);
+          tweetHistory.push($tweet);
           index -= 1;
         }
 

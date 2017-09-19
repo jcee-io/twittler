@@ -8,8 +8,14 @@ table {
 }
 
 #logo {
-	margin: 2% 42%;
+	margin: 2% auto;
+	display: block;
 	width: 200px;
+}
+
+.userlink {
+	background: transparent;
+	border: none;
 }
 .jumbotron #leftside {
 
