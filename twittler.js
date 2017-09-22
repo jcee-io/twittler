@@ -5,7 +5,7 @@ date = date.toLocaleTimeString()
 var realNames = {
   'douglascalhoun' : 'Douglas Calhoun',
   'mracus'         : 'Max R Acus',
-  'realDonaldTrump'     : 'Donald Trump',
+  'realDonaldTrump': 'Donald Trump',
   'sharksforcheap' : 'ZOOKEEPER WILLIS'
 };
 var userTweets = {
@@ -31,7 +31,7 @@ function getVal(obj){
   for(var i = 0; i < userTweets[obj.value].length; i++){
     userTweets[obj.value][i].appendTo($('body'));
   }
-}
+} 
 //////////////////////////////// Data Generator /////////////////////////////////
 /*
       <div class="tweet jumbotron container">
@@ -39,7 +39,7 @@ function getVal(obj){
           <strong>
             <button value="tweet.user" onclick="getVal(this)">USER NAME</button>
           </strong>
-          @username
+          @username 
           <img class="verified" src="verified.png">
           TIMESTAMP
         </div>
