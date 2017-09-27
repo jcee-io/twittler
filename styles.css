@@ -1,12 +1,28 @@
 body {
 	background : #e6ecf0;
+	font-family: "Helvetica Neue";
 }
 
-strong > button {
+button {
 	background: transparent;
 	border: none;
 	color: black;
 }
+
+#showlink {
+	color: #00aced;
+	margin: 2% auto;
+	text-align: center;
+	display: block;
+	font-size: 20px;
+}
+#leftsidetop {
+	margin: 0% 0%;
+	padding: 0px 0px;
+	height: 75px;
+	width: 100%;
+}
+
 
 #logo {
 	margin: 2% auto;
@@ -14,15 +30,93 @@ strong > button {
 	width: 200px;
 }
 
+#leftside {
+	padding-bottom: 50px;
+	height: 175px;
+}
 
+#rightside {
+	padding: 2% 5%;
+	font-size: 13px;
+	text-align: center;
+	color: #00aced;
+}
+#leftside, #rightside, #trending {
 
+	width: 100%;
+	max-width: 250px;
+	background: whitesmoke;
+	margin:  0px auto;
+	padding-top: 0px;
+}
+
+#trending {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 5% 5%;
+	color: grey;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+#trending > span, #trending > div {
+	color: #00aced;
+	font-size: 12px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+#trending > div {
+	font-size: 17px;
+	font-weight: 600;
+	margin-left: 0px;
+}
+.profile {
+	width: 60px;
+	margin-top: 55px;
+	margin-left: 6px;
+	border-radius: 50%;
+	border: 3px solid grey;
+}
+
+.displayname {
+	font-family: "Helvetica Neue";
+	font-weight: 700;
+	margin-left: 33%;
+	margin-top: 3%;
+}
+
+.displayname > .belowdisplayname {
+	color: grey;
+	text-align: left;
+}
+
+.displaystats {
+	margin-top: 5px;
+	font-size: 12px;
+	font-weight: 600;
+	text-align: left;
+}
+
+.displaystatvalue {
+	font-size: 15px;
+	color: #00aced;
+	font-weight: 700;
+	margin-top: -5px;
+}
+
+.row {
+	width : 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .tweet {
 	font-family: "Helvetica Neue";
 	text-align: center;
 	background : whitesmoke;
 	border-bottom: 1px solid #e6ecf0;
-	width: 40%;
-	margin: 0% 30%;
+	width: 100%;
+	margin: 0% 0%;
 	padding: 0.25% 0%;
 	color: grey;
 	

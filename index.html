@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <!-- This is the navbar that's pretty self explanatory-->
     <nav class="navbar navbar-default container-fluid">
       <div class="container-fluid">
         <div class="navbar-header navbar-right">
@@ -33,9 +34,95 @@
       </div>
     </nav>
 
+
+    <!-- This is the twittler logo that we will be using-->
     <img onclick="goHome()" style="cursor: pointer;" src="twittler.png" id="logo">
 
 
-    <script src="twittler.js"></script>
+    <!-- Utilizes Bootstrap's grid system to create the container for the three columns that contain the windows and tweets -->
+    <div class="row">
+      <div class="col-md-3">
+
+        <!-- This whole div is the profile jumbotron -->
+        <div class="jumbotron" id="leftside">
+
+          <!-- This is the top half of the window with the username, it has te blue color on it -->
+          <div id="leftsidetop" style="background: #00aced;" class="jumbotron">
+            <img class="profile" src="https://pbs.twimg.com/profile_images/793537459451596800/k6pD59ev.jpg">
+          </div>
+          <div class="displayname">
+            HRSSP5 Student
+            <div class="belowdisplayname" style="font-weight: 400;">
+              @ihateuniq
+            </div>
+          </div>
+          <div class="displaystats">
+            <div class="col-md-4 col-sm-4 col-xs-4" style="margin-right: -10px;">Tweets</div>
+            <div class="col-md-4 col-sm-4 col-xs-4" style="margin-right: 5px;">Following</div>
+            <div class="col-md-4 col-sm-4 col-xs-4">Followers</div>
+            <br>
+            <div class="displaystatvalue col-md-4 col-sm-4 col-xs-4">0</div>
+            <div class="displaystatvalue col-md-4 col-sm-4 col-xs-4" style="margin-left: -10px;">0</div>
+            <div class="displaystatvalue col-md-4 col-sm-4 col-xs-4" style="margin-left: 5px;">0</div>
+          </div>
+        </div>
+
+        <!-- This div is the trending window -->
+        <div class="jumbotron" id="trending">
+          Trends for you
+          <span>change</span>
+          <!-- Will create a generator in future, placeholder trends are placed instead -->
+          <div>
+            #ilovessp5
+          </div>
+          <div>
+            #twittler
+          </div>
+          <div>
+            #andyloveskeyboards
+          </div>
+          <div>
+            #reducereuserecycleandy
+          </div>
+          <div>
+            #recursionsucks
+          </div>
+          <div>
+            #underbarisokay
+          </div>
+          <div>
+            #wewillmeetinoctober
+          </div>
+          <div>
+            #phoebeisaclosetweeb
+          </div>
+          <div>
+            #nunoforGOATartistofSSP
+          </div>
+          <div>
+            #davidlovesrecursion
+          </div>
+        </div>
+      </div>
+
+
+      <!-- All of the tweets are generated in this div -->
+      <div class="col-md-6" id="tweetbox"></div>
+
+
+      <!-- The right side of the page, this will contain follow recommendations -->
+      <div class="col-md-3">
+        <div class="jumbotron" id="rightside">
+          <span id='pendingTweets'>0</span>
+          <span> tweet(s) pending. Refresh to show.</span>
+        </div>
+
+      </div>
+
+    </div>
+    
+    <!-- These are the .js files we're importing -->
+    <script src="data_generator.js"></script>
+
   </body>
 </html>

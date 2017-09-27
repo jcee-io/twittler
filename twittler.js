@@ -17,21 +17,29 @@ var userTweets = {
 
 var tweetHistory = [];
 
+function random(num){
+  return Math.floor(Math.random() * num);
+}
 
 function goHome(){
   $('.tweet').remove();
-  for(var i = 0; i < tweetHistory.length; i++){
-    tweetHistory[i].appendTo($('body'));
+  for(var i = streams.home.length - 1; i >= 0; i--){
+    appendTweet(i);
   }
 }
 
+
+//removes all of the tweets and refreshes it with the specified users tweets
 function getVal(obj){
   $('.tweet').remove();
 
   for(var i = 0; i < userTweets[obj.value].length; i++){
-    userTweets[obj.value][i].appendTo($('body'));
+    userTweets[obj.value][i].appendTo($('#tweetbox'));
   }
 } 
+
+
+
 //////////////////////////////// Data Generator /////////////////////////////////
 /*
       <div class="tweet jumbotron container">
@@ -49,15 +57,11 @@ function getVal(obj){
         <span class="icon-heart"></span>
         <span class="icon-envelope-letter"></span>
       </div>
-*/
+*/    
 
-      $(document).ready(function(){
-        var $body = $('body');
-        //$body.html('');
+      function appendTweet(tweet){
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
+          
           var $tweet = $('<div class="tweet jumbotron container"></div>');
           $tweet.html(
             '<div class="username ' + tweet.user 
@@ -68,15 +72,27 @@ function getVal(obj){
             + date
             + '</div>' 
             + tweet.message + '<br><br>'
-            + '<span class="icon-bubbles"> comments </span>'
+            + '<span class="icon-bubbles">  comments </span>'
             + '<span class="icon-loop"> retweets </span>'
             + '<span class="icon-heart"> likes </span>'
             + '<span class="icon-envelope-letter"> message </span>'
             );
-          $tweet.appendTo($body);
+          $tweet.appendTo($('#tweetbox'));
           userTweets[tweet.user].push($tweet);
           tweetHistory.push($tweet);
           $('.realDonaldTrump').find('.verified').removeAttr('hidden');
+      }
+
+
+      $(document).ready(function(){
+        var $body = $('body');
+        //$body.html('');
+
+        var index = streams.home.length - 1;
+        while(index >= 0){
+          var tweet = streams.home[index];
+
+          appendTweet(tweet);
           index -= 1;
         }
 
