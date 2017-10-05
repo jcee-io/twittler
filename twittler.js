@@ -5,13 +5,13 @@ date = date.toLocaleTimeString()
 var realNames = {
   'douglascalhoun' : 'Douglas Calhoun',
   'mracus'         : 'Max R Acus',
-  'realDonaldTrump': 'Donald Trump',
+  'staff_muhammad' : 'Muhammad Meigooni',
   'sharksforcheap' : 'ZOOKEEPER WILLIS'
 };
 var userTweets = {
   'douglascalhoun' : [],
   'mracus'         : [],
-  'realDonaldTrump': [],
+  'staff_muhammad' : [],
   'sharksforcheap' : []
 }
 
@@ -80,7 +80,7 @@ function getVal(obj){
           $tweet.appendTo($('#tweetbox'));
           userTweets[tweet.user].push($tweet);
           tweetHistory.push($tweet);
-          $('.realDonaldTrump').find('.verified').removeAttr('hidden');
+          $('.staff_muhammad').find('.verified').removeAttr('hidden');
       }
 
 
